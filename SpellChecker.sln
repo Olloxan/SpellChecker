@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SpellChecker", "SpellChecker.pyproj", "{86923B6A-0F7B-4F56-95D2-1FB20EBE81E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86923B6A-0F7B-4F56-95D2-1FB20EBE81E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86923B6A-0F7B-4F56-95D2-1FB20EBE81E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEF1268B-2983-43A8-A95D-3E92AE25C6CE}
+	EndGlobalSection
+EndGlobal
