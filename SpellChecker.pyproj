@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>86923b6a-0f7b-4f56-95d2-1fb20ebe81e4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SpellChecker.py</StartupFile>
+    <StartupFile>NLP Tutorial\NLPExample.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>SpellChecker</Name>
     <RootNamespace>SpellChecker</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|TorchConda</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,38 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NLP Tutorial\DecoderRNN.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NLP Tutorial\EncoderRNN.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NLP Tutorial\Lang.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NLP Tutorial\NLPExample.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NLP Tutorial\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestDatei.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextStyle\Example_Textstyle.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SpellChecker.py" />
+    <Compile Include="TextStyle\Network.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|TorchConda" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NLP Tutorial\" />
+    <Folder Include="TextStyle\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
