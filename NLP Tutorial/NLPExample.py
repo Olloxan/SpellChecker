@@ -10,7 +10,7 @@ import torch.optim as optim
 
 from Lang import Lang
 from EncoderRNN import EncoderRNN
-from DecoderRNN import AttnDecoderRNN
+from DecoderRNN import AttnDecoderRNN, DecoderRNN
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -334,6 +334,9 @@ def evaluateRandomly(encoder, decoder, n=10):
 
 hidden_size = 256
 encoder1 = EncoderRNN(input_lang.num_words, hidden_size).to(device)
+#decoder1 = DecoderRNN(hidden_size, output_lang.num_words).to(device)
+#trainIters(encoder1, decoder1, 75000, print_every=5000)
+
 attn_decoder1 = AttnDecoderRNN(hidden_size, output_lang.num_words, dropout_p=0.1).to(device)
 
 trainIters(encoder1, attn_decoder1, 75000, print_every=5000)
@@ -343,3 +346,38 @@ trainIters(encoder1, attn_decoder1, 75000, print_every=5000)
 
 evaluateRandomly(encoder1, attn_decoder1)
 
+
+def showAttention(input_sentence, output_words, attentions):
+    # Set up figure with colorbar
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    cax = ax.matshow(attentions.numpy(), cmap='bone')
+    fig.colorbar(cax)
+
+    # Set up axes
+    ax.set_xticklabels([''] + input_sentence.split(' ') +
+                       ['<EOS>'], rotation=90)
+    ax.set_yticklabels([''] + output_words)
+
+    # Show label at every tick
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
+    ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
+
+    plt.show()
+
+
+def evaluateAndShowAttention(input_sentence):
+    output_words, attentions = evaluate(
+        encoder1, attn_decoder1, input_sentence)
+    print('input =', input_sentence)
+    print('output =', ' '.join(output_words))
+    showAttention(input_sentence, output_words, attentions)
+
+
+evaluateAndShowAttention("wir sagen .")
+
+evaluateAndShowAttention("ich habe hunger .")
+
+evaluateAndShowAttention("das wasser ist nass .")
+
+evaluateAndShowAttention("ich wurde gern scheissen gehen .")
