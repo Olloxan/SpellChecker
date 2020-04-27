@@ -44,11 +44,11 @@ def readLangs(lang1, lang2, reverse=False):
     print("Reading lines...")
 
     # Read the file and split into lines   
-    lines = open('./NLP Tutorial/data/%s-%s.txt' % (lang1, lang2), encoding='utf-8').read().strip().split('\n')
-
+    #lines = open('./NLP Tutorial/data/%s-%s.txt' % (lang1, lang2), encoding='utf-8').read().strip().split('\n')
+    lines = open('./NLP Tutorial/data/%s-%s_pairs.txt' % (lang1, lang2), encoding='utf-8').read().strip().split('\n')
+    pairs = [line.split('\t') for line in lines]
     # Split every line into pairs and normalize
-    pairs = [[normalizeString(string) for string in line.split('\t')[:2]] for line in lines]
-
+    #pairs = [[normalizeString(string) for string in line.split('\t')[:2]] for line in lines]
     # reverse pairs, make Lang instanstances
     if reverse:
         pairs = [list(reversed(pair)) for pair in pairs]
@@ -68,7 +68,7 @@ def readLangs(lang1, lang2, reverse=False):
 # the form "I am" or "He is" etc. (accounting for apostrophes replaced
 # earlier).
 
-MAX_LENGTH = 10
+MAX_LENGTH = 20
 
 eng_prefixes = (
     "i am ", "i m ",
@@ -80,7 +80,8 @@ eng_prefixes = (
 )
 
 def filterPair(pair):
-    return len(pair[0].split(' ')) < MAX_LENGTH and len(pair[1].split(' ')) < MAX_LENGTH and pair[1].startswith(eng_prefixes)
+    #return len(pair[0].split(' ')) < MAX_LENGTH and len(pair[1].split(' ')) < MAX_LENGTH and pair[1].startswith(eng_prefixes)
+    return len(pair[0].split(' ')) < MAX_LENGTH and len(pair[1].split(' ')) < MAX_LENGTH
 
 
 def filterPairs(pairs):
@@ -340,6 +341,11 @@ trainIters(encoder1, attn_decoder1, 75000, print_every=5000)
 
 ######################################################################
 #
+encoder1_state_dict = encoder1.state_dict()
+torch.save(encoder1_state_dict, './NLP Tutorial/models/RNNEncoder')
 
+attn_decoder1_state_dict = attn_decoder1.state_dict()
+torch.save(encoder1_state_dict, './NLP Tutorial/models/AttnDecoder')
 evaluateRandomly(encoder1, attn_decoder1)
+
 

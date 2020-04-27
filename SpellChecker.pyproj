@@ -34,6 +34,9 @@
     <Compile Include="NLP Tutorial\NLPExample.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="NLP Tutorial\PairPrepare.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NLP Tutorial\__init__.py">
       <SubType>Code</SubType>
     </Compile>
