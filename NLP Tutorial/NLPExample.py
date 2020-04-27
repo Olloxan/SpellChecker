@@ -10,7 +10,7 @@ import torch.optim as optim
 
 from Lang import Lang
 from EncoderRNN import EncoderRNN
-from DecoderRNN import AttnDecoderRNN
+from DecoderRNN import AttnDecoderRNN, DecoderRNN
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -335,6 +335,9 @@ def evaluateRandomly(encoder, decoder, n=10):
 
 hidden_size = 256
 encoder1 = EncoderRNN(input_lang.num_words, hidden_size).to(device)
+#decoder1 = DecoderRNN(hidden_size, output_lang.num_words).to(device)
+#trainIters(encoder1, decoder1, 75000, print_every=5000)
+
 attn_decoder1 = AttnDecoderRNN(hidden_size, output_lang.num_words, dropout_p=0.1).to(device)
 
 trainIters(encoder1, attn_decoder1, 75000, print_every=5000)
