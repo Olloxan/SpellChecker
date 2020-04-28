@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>86923b6a-0f7b-4f56-95d2-1fb20ebe81e4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>NLP Tutorial\NLPExample.py</StartupFile>
+    <StartupFile>NLP_Tutorial\ModelTraining.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,13 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NLP Tutorial\DecoderRNN.py">
+    <Compile Include="NLP Tutorial\ModelTraining.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="NLP Tutorial\EncoderRNN.py">
+    <Compile Include="NLP Tutorial\Utility\DecoderRNN.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="NLP Tutorial\Lang.py">
+    <Compile Include="NLP Tutorial\Utility\EncoderRNN.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NLP Tutorial\Utility\Lang.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NLP Tutorial\NLPExample.py">
@@ -37,9 +40,21 @@
     <Compile Include="NLP Tutorial\PairPrepare.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="NLP Tutorial\Utility\LanguageLoader.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NLP Tutorial\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="NLP_Tutorial\ModelTraining.py" />
+    <Compile Include="NLP_Tutorial\NLPExample.py" />
+    <Compile Include="NLP_Tutorial\PairPrepare.py" />
+    <Compile Include="NLP_Tutorial\Utility\DecoderRNN.py" />
+    <Compile Include="NLP_Tutorial\Utility\EncoderRNN.py" />
+    <Compile Include="NLP_Tutorial\Utility\Lang.py" />
+    <Compile Include="NLP_Tutorial\Utility\LanguageLoader.py" />
+    <Compile Include="NLP_Tutorial\Utility\__init__.py" />
+    <Compile Include="NLP_Tutorial\__init__.py" />
     <Compile Include="TestDatei.py">
       <SubType>Code</SubType>
     </Compile>
@@ -55,7 +70,10 @@
     <InterpreterReference Include="CondaEnv|CondaEnv|TorchConda" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="NLP_Tutorial\" />
     <Folder Include="NLP Tutorial\" />
+    <Folder Include="NLP Tutorial\Utility\" />
+    <Folder Include="NLP_Tutorial\Utility\" />
     <Folder Include="TextStyle\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
