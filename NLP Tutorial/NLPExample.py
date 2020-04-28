@@ -340,7 +340,7 @@ encoder1 = EncoderRNN(input_lang.num_words, hidden_size).to(device)
 
 attn_decoder1 = AttnDecoderRNN(hidden_size, output_lang.num_words, dropout_p=0.1).to(device)
 
-trainIters(encoder1, attn_decoder1, 75000, print_every=5000)
+trainIters(encoder1, attn_decoder1, 500000, print_every=5000)
 
 ######################################################################
 #
