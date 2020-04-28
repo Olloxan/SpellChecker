@@ -104,6 +104,7 @@ def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, deco
     return loss.item() / target_length
 
 def trainModels(encoder, decoder, num_iters, print_every=1000, learning_rate=0.01):
+    print('training started...')
     start = time.time()
     switch_variable = 0
     plot_losses = []

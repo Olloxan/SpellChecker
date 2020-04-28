@@ -22,30 +22,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NLP Tutorial\ModelTraining.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NLP Tutorial\Utility\DecoderRNN.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NLP Tutorial\Utility\EncoderRNN.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NLP Tutorial\Utility\Lang.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NLP Tutorial\NLPExample.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NLP Tutorial\PairPrepare.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NLP Tutorial\Utility\LanguageLoader.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NLP Tutorial\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="NLP_Tutorial\ModelTraining.py" />
     <Compile Include="NLP_Tutorial\NLPExample.py" />
     <Compile Include="NLP_Tutorial\PairPrepare.py" />
@@ -72,8 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NLP_Tutorial\" />
-    <Folder Include="NLP Tutorial\" />
-    <Folder Include="NLP Tutorial\Utility\" />
     <Folder Include="NLP_Tutorial\Utility\" />
     <Folder Include="TextStyle\" />
   </ItemGroup>
