@@ -1,12 +1,12 @@
 
-from Lang import Lang
+from Utility.Lang import Lang
 
 class LanguageLoader:
     def __init__(self, max_length=20):
         self.max_length = max_length
 
     def filterPairs(self, pairs):
-        return [pair for pair in pairs if filterPair(pair)]
+        return [pair for pair in pairs if self.filterPair(pair)]
 
     def filterPair(self, pair):    
         return len(pair[0].split(' ')) < self.max_length and len(pair[1].split(' ')) < self.max_length
@@ -15,7 +15,7 @@ class LanguageLoader:
         print("Reading lines...")
 
         # Read the file and split into lines       
-        lines = open('./NLP Tutorial/data/%s-%s_pairs.txt' % (lang1, lang2), encoding='utf-8').read().strip().split('\n')
+        lines = open('./NLP_Tutorial/data/%s-%s_pairs.txt' % (lang1, lang2), encoding='utf-8').read().strip().split('\n')
         pairs = [line.split('\t') for line in lines]
         # Split every line into pairs and normalize
     
@@ -31,10 +31,10 @@ class LanguageLoader:
         return input_lang, output_lang, pairs
 
     def prepareData(self, lang1, lang2, reverse=False):
-        input_lang, output_lang, pairs = readLangs(lang1, lang2, reverse)
+        input_lang, output_lang, pairs = self.readLangs(lang1, lang2, reverse)
     
         print("Read %s sentence pairs" % len(pairs))
-        pairs = filterPairs(pairs)
+        pairs = self.filterPairs(pairs)
     
         print("Trimmed to %s sentence pairs" % len(pairs))
     

@@ -53,6 +53,7 @@
     <Compile Include="NLP_Tutorial\Utility\EncoderRNN.py" />
     <Compile Include="NLP_Tutorial\Utility\Lang.py" />
     <Compile Include="NLP_Tutorial\Utility\LanguageLoader.py" />
+    <Compile Include="NLP_Tutorial\Utility\logger.py" />
     <Compile Include="NLP_Tutorial\Utility\__init__.py" />
     <Compile Include="NLP_Tutorial\__init__.py" />
     <Compile Include="TestDatei.py">
