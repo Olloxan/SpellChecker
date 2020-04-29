@@ -19,7 +19,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 MAX_LENGTH = 20
-num_iterations = 500000
+num_iterations = 200000
 print_every = 1000
 
 SOS_token = 0
